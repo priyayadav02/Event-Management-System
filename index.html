@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Event Management System</h1>
+        <nav>
+            <button onclick="showCreateEvent()">Create Event</button>
+            <button onclick="showEventList()">View Events</button>
+        </nav>
+    </header>
+
+    <section id="create-event-section" style="display: none;">
+        <h2>Create an Event</h2>
+        <form id="create-event-form" onsubmit="createEvent(event)">
+            <label for="event-name">Event Name:</label>
+            <input type="text" id="event-name" required>
+            <label for="event-date">Event Date:</label>
+            <input type="datetime-local" id="event-date" required>
+            <label for="event-description">Description:</label>
+            <textarea id="event-description"></textarea>
+            <button type="submit">Create Event</button>
+        </form>
+    </section>
+
+    <section id="event-list-section" style="display: none;">
+        <h2>Events</h2>
+        <div id="events-list"></div>
+    </section>
+
+    <section id="event-details-section" style="display: none;">
+        <h2>Event Details</h2>
+        <div id="event-details"></div>
+        <button id="rsvp-button" onclick="toggleRSVP()">RSVP</button>
+        <button id="delete-event-button" onclick="deleteEvent()">Delete Event</button>
+        <button onclick="sendReminder()">Send Reminder</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Event Management System</p>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>
